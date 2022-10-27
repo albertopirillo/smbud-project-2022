@@ -54,8 +54,10 @@ if __name__ == "__main__":
                 string_arr = np.ndarray(shape=entry["IndexLength"], dtype=object)
                 dictionary = entry["InvertedIndex"]
                 for key, value in dictionary.items():
+                    string = key.replace('\n', '')
+                    string = string.replace('\r', '')
                     for elem in value:
-                        string_arr[elem] = key
+                        string_arr[elem] = string
                 string_arr = string_arr[string_arr != None]
                 indexed_abstract[i] = " ".join(string_arr)
             df = df.rename({"indexed_abstract": "abstract"}, axis=1)
@@ -63,7 +65,9 @@ if __name__ == "__main__":
             # Store the chunk in the .csv file
             if block_count == chunk_size:
                 df.to_csv(out_file_path, encoding="UTF-8", index=False, mode="a",
-                          header=True, escapechar="'", columns=col_labels)
+                          header=True, escapechar="|", columns=col_labels)
             else:
                 df.to_csv(out_file_path, encoding="UTF-8", index=False, mode="a",
-                          header=False, escapechar="'", columns=col_labels)
+                          header=False, escapechar="|", columns=col_labels)
+
+    print("Conversion complete.")
