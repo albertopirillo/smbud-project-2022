@@ -128,5 +128,9 @@ dmypy.json
 # Pyre type checker
 .pyre/
 
-# draw.io backup files
-.bkp
+# draw.io temp files
+*.bkp
+*.dtmp
+
+# IDE config
+.idea/
