@@ -54,10 +54,11 @@ if __name__ == "__main__":
                 string_arr = np.ndarray(shape=entry["IndexLength"], dtype=object)
                 dictionary = entry["InvertedIndex"]
                 for key, value in dictionary.items():
-                    string = key.replace('\n', '')
-                    string = string.replace('\r', '')
+                    to_be_removed = {'\n', '\r', '\\'}
+                    for char in to_be_removed:
+                        key = key.replace(char, "")
                     for elem in value:
-                        string_arr[elem] = string
+                        string_arr[elem] = key
                 string_arr = string_arr[string_arr != None]
                 indexed_abstract[i] = " ".join(string_arr)
             df = df.rename({"indexed_abstract": "abstract"}, axis=1)
