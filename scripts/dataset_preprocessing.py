@@ -16,9 +16,15 @@ chunk_size = 100_000
 citation_thresh = 100
 references_thresh = 30
 
-# Structure of the columns of the paper of the dataset
+# Structure of the columns of the paper dataset
 col_labels = ("id", "title", "year", "n_citation", "page_start", "page_end", "doc_type",
               "publisher", "volume", "issue", "doi", "references", "abstract")
+
+# Columns and datatypes of the original dataset
+dtypes = {"id": "UInt32", "title": "string", "authors": "object", "venue": "object", "year": "UInt16",
+          "n_citation": "Uint16", "page_start": "Uint16", "page_end": "Uint16", "doc_type": "string",
+          "publisher": "string", "volume": "Uint16", "issue": "Uint16", "fos": "object", "doi": "string",
+          "references": "object", "abstract": "object"}
 
 
 def author_dataset(dataset, header):
@@ -66,7 +72,7 @@ if __name__ == "__main__":
     df = pd.DataFrame()
     is_first_chunk = True
 
-    with pd.read_json(in_file_path, encoding="UTF-8", lines=True, chunksize=chunk_size) as reader:
+    with pd.read_json(in_file_path, encoding="UTF-8", lines=True, chunksize=chunk_size, dtype=dtypes) as reader:
         block_count = 0
         for chunk in reader:
             block_count += chunk_size
