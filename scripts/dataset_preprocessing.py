@@ -15,6 +15,7 @@ out_folder_path = ""
 chunk_size = 100_000
 citation_thresh = 100
 references_thresh = 30
+max_fos_per_paper = 3
 
 # Structure of the columns of the paper dataset
 col_labels = ("id", "title", "year", "n_citation", "page_start", "page_end", "doc_type",
@@ -56,9 +57,13 @@ def fos_dataset(dataset, header):
     # Create the fos dataset
     fos_df = pd.DataFrame(columns=("paper_id", "fos_name", "fos_weight"))
     for index, row in dataset[["id", "fos"]].iterrows():
+        new_ros_count = 0
         for fos in row["fos"]:
             new_row = {"paper_id": row["id"], "fos_name": fos.get("name"), "fos_weight": fos.get("w")}
             fos_df = pd.concat([fos_df, pd.DataFrame([new_row])], ignore_index=True)
+            new_ros_count += 1
+            if new_ros_count == 3:
+                break
     # Store the venue dataset in a file
     fos_df.to_csv(out_folder_path + "/fos_dataset.csv", encoding="UTF-8", mode="a",
                   index=False, header=header, escapechar="|")
