@@ -9,9 +9,9 @@ import ast
 
 # Config
 db_address = "mongodb://localhost:27017/"
-file_path = r"C:\Users\simon\Desktop\SMBUD-MongoDB\reduced_dataset_author_update.csv"
-db_name = "SMBUDProject"
-collection_name = "papers_collection"
+file_path = ""
+db_name = ""
+collection_name = ""
 
 if __name__ == "__main__":
     with MongoClient(db_address) as client:
@@ -24,6 +24,11 @@ if __name__ == "__main__":
         df["fos"] = df["fos"].apply(ast.literal_eval)
         df["venue"] = df["venue"].apply(ast.literal_eval)
         df["references"] = df["references"].apply(ast.literal_eval)
+        # df["sections"] = df["sections"].apply(ast.literal_eval)
+
+        # Convert the "id" field into a string and change its name
+        df["id"] = df["id"].astype(str)
+        df = df.rename({"id": "_id"}, axis=1)
 
         # Insert into the database
         collection.insert_many(df.to_dict('records'))
