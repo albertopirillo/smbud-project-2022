@@ -9,9 +9,9 @@ import ast
 
 # Config
 db_address = "mongodb://localhost:27017/"
-file_path = ""
-db_name = ""
-collection_name = ""
+file_path = r"C:\Users\simon\Desktop\SMBUD-MongoDB\reduced_dataset_author_update.csv"
+db_name = "SMBUDProject"
+collection_name = "papers_collection"
 
 if __name__ == "__main__":
     with MongoClient(db_address) as client:
