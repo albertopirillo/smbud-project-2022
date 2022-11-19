@@ -24,7 +24,7 @@ if __name__ == "__main__":
         df["fos"] = df["fos"].apply(ast.literal_eval)
         df["venue"] = df["venue"].apply(ast.literal_eval)
         df["references"] = df["references"].apply(ast.literal_eval)
-        # df["sections"] = df["sections"].apply(ast.literal_eval)
+        df["sections"] = df["sections"].apply(ast.literal_eval)
 
         # Convert the "id" field into a string and change its name
         df["id"] = df["id"].astype(str)
