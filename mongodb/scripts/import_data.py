@@ -4,6 +4,7 @@
 """
 
 from pymongo import MongoClient
+from bson.objectid import ObjectId
 import pandas as pd
 import ast
 
@@ -23,11 +24,36 @@ if __name__ == "__main__":
         df["authors"] = df["authors"].apply(ast.literal_eval)
         df["fos"] = df["fos"].apply(ast.literal_eval)
         df["venue"] = df["venue"].apply(ast.literal_eval)
+
+        # Convert references to ObjectId
         df["references"] = df["references"].apply(ast.literal_eval)
+        allReferencesFromDF = df["references"]
+        allReferencesNew = []
+        for refList in allReferencesFromDF:
+            tempRefList = []
+            for ref in refList:
+                additionalChars = ""
+                for k in range(0, 24 - len(str(ref))):
+                    additionalChars = additionalChars + "f"
+                new_ref = str(ref) + additionalChars
+                tempRefList.append(ObjectId(new_ref))
+            allReferencesNew.append(tempRefList)
+        df["references"] = allReferencesNew
+
+        # Convert sections to the correct datatype
         df["sections"] = df["sections"].apply(ast.literal_eval)
 
-        # Convert the "id" field into a string and change its name
-        df["id"] = df["id"].astype(str)
+        # Convert the "id" field into an ObjectId and change its name
+        allIdsFromDF = df["id"].astype(str)
+        allIdsNew = []
+        for eachId in allIdsFromDF:
+            additionalChars = ""
+            for k in range(0, 24-len(str(eachId))):
+                additionalChars = additionalChars + "f"
+            newIdString = str(eachId) + additionalChars
+            allIdsNew.append(ObjectId(newIdString))
+
+        df["id"] = allIdsNew
         df = df.rename({"id": "_id"}, axis=1)
 
         # Insert into the database
