@@ -1,0 +1,4 @@
+LOAD CSV WITH HEADERS FROM "file:///author_dataset.csv" AS csvLine
+MATCH (p:Paper),(a:Author)
+WHERE (toInteger(csvLine.paper_id)=p.id) and (toInteger(csvLine.author_id) = a.id)
+CREATE (p)-[w:writing]->(a)

@@ -1,0 +1,3 @@
+MATCH (p: Paper) -[w:writing]->(a:Author), (p: Paper) -[i: in_]->(v: Venue)
+WHERE v.id >= 160000000 AND a.organization='Microsoft Research, One Microsoft Way, Redmond, WA 98052, USA. hshum@microsoft.com#TAB#' 
+RETURN labels(a) AS Type, a.name AS Author, COUNT(*) AS Numbers_of_Papers

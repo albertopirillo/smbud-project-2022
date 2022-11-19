@@ -1,0 +1,3 @@
+MATCH (p: Paper)-[w:writing]->(a:Author), (p: Paper)-[d: dealing]->(f:Fos) 
+WHERE f.name = "Machine learning" AND p.n_citation>5000 
+RETURN COUNT(a.id) AS num_aut

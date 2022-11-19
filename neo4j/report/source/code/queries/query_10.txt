@@ -1,0 +1,4 @@
+MATCH (p: Paper)-[d: dealing]->(f:Fos), (p2: Paper)-[d2:dealing] ->(f2:Fos), s = shortestPath( (p: Paper)-[r:referencing*]->(p2: Paper) )
+WHERE f.name = "Artificial intelligence" AND f2.name = "Machine learning" AND p <> p2
+RETURN s
+LIMIT 5
