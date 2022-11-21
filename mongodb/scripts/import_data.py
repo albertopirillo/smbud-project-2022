@@ -34,7 +34,7 @@ if __name__ == "__main__":
             for ref in refList:
                 additionalChars = ""
                 for k in range(0, 24 - len(str(ref))):
-                    additionalChars = additionalChars + "f"
+                    additionalChars = additionalChars + "0"
                 new_ref = str(ref) + additionalChars
                 tempRefList.append(ObjectId(new_ref))
             allReferencesNew.append(tempRefList)
@@ -49,7 +49,7 @@ if __name__ == "__main__":
         for eachId in allIdsFromDF:
             additionalChars = ""
             for k in range(0, 24-len(str(eachId))):
-                additionalChars = additionalChars + "f"
+                additionalChars = additionalChars + "0"
             newIdString = str(eachId) + additionalChars
             allIdsNew.append(ObjectId(newIdString))
 
