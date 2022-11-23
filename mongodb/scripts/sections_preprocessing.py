@@ -1,18 +1,26 @@
+"""
+    This script constructs the "sections" field of the dataset.
+    Data is taken from multiple datasets, and then it is merged into a single one.
+"""
+
 import pandas as pd
 import random
 
 # Config
-main_df = pd.read_csv("")
-photo_df = pd.read_csv("", sep='\t')
-tweets_df = pd.read_csv("")
-text_df = tweets_df.pop("")
-paper_df = pd.read_csv("")
-
+papers_path = ""
+images_path = ""
+tweets_path = ""
 
 if __name__ == "__main__":
+    main_df = pd.read_csv(papers_path)
+    papers_df = pd.read_csv(papers_path)
+    images_df = pd.read_csv(images_path, sep='\t')
+    tweets_df = pd.read_csv(tweets_path)
+
+    text_df = tweets_df.pop("tweet_text")
     id_df = main_df.pop("id")
-    caption_df = photo_df.drop(columns=photo_df.columns[1], axis=1)
-    url_df = photo_df.drop(columns=photo_df.columns[0], axis=1)
+    caption_df = images_df.drop(columns=images_df.columns[1], axis=1)
+    url_df = images_df.drop(columns=images_df.columns[0], axis=1)
 
     i = 0
     j = 0
@@ -75,6 +83,5 @@ if __name__ == "__main__":
         data.append([row, sections])
 
     d = pd.DataFrame(data=data, columns=['id', 'sections'])
-
-    paper_df = paper_df.merge(d, on='id', how='left')
-    paper_df.to_csv("paper_dataset_final.csv", encoding="UTF-8", index=False, escapechar="|")
+    papers_df = papers_df.merge(d, on='id', how='left')
+    papers_df.to_csv("paper_dataset_final.csv", encoding="UTF-8", index=False, escapechar="|")
