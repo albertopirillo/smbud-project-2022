@@ -1,0 +1,4 @@
+db.papers.updateOne(
+  { "_id":  ObjectId("101567523200000000000000"), "authors.name": "Joeran Beel"  } ,
+  { "$set": { "sections.0.subsections.0.title": "Artificial Intelligence: Machine Learning"} }
+)

@@ -1,0 +1,4 @@
+db.papers.find(
+   {"n_citation": {"$gt": 500}, "year": {"$gte": 2015}, "doc_type": "Journal"},
+   {"title": 1, "year": 1, "n_citation": 1, "publisher": 1, "doi": 1} 
+).limit(3)

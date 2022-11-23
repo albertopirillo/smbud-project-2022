@@ -1,0 +1,4 @@
+db.papers.find(
+   {"$and": [{"authors": {"$elemMatch": {"org": "IEEE"}}}, {"sections": {"$elemMatch": {"figures.caption": {"$regex": /bus/}}}}, {"sections": {"$size": 3}}]},
+   {"title": 1, "year": 1, "n_citation": 1, "publisher": 1, "doi": 1, "sections": 1} 
+).limit(10)

@@ -1,0 +1,1 @@
+CREATE (f:Fos {weight:0.57640203, name:"Ambient intelligence" })

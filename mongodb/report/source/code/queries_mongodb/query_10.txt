@@ -1,0 +1,12 @@
+db.papers.aggregate([ 
+  { "$match": { "$and": [ {"fos.name": "Data mining"}, {"volume": 3}, {"sections": {"$exists": true} } ] } },
+  {
+    "$lookup":
+      {
+        "from": "Project2",
+        "localField": "references",
+        "foreignField": "_id",
+        "as": "refs"
+      }
+ }
+])

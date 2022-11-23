@@ -1,0 +1,13 @@
+db.papers.aggregate([
+  { "$match": { "$and": [{"year": {"$gte": 2010}}, {"$or": [{"authors.org": "IEEE"}, {"publisher": "IEEE Computer Society"}]}, {"fos.name": "Machine learning"}]} },
+  {
+    "$lookup":
+      {
+        "from": "papersCollection",
+        "localField": "references",
+        "foreignField": "_id",
+        "pipeline": [ {"$match": { "$expr": {"$lte": ["$year", 2005]}}}, {"$project": {"_id": 1, "title": 1, "year": 1}}],
+        "as": "refs"
+      }
+ }
+])

@@ -1,0 +1,2 @@
+LOAD CSV WITH HEADERS FROM "file:///venue_dataset.csv" AS csvLine
+MERGE  (v:Venue {id: toInteger(csvLine.venue_id), name: csvLine.venue_name})

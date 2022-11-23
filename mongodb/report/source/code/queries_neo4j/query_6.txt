@@ -1,0 +1,4 @@
+MATCH (p: Paper) -[d: dealing]->(f: Fos), (p: Paper) -[r:referencing]->(p2: Paper) 
+WHERE p2.n_citation>2000 AND p.publisher='Society for Information Management and The Management Information Systems Research Center'
+RETURN p.title, avg(f.weight)
+

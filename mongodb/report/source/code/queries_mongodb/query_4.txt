@@ -1,0 +1,10 @@
+db.papers.aggregate([ 
+  {"$match": {"$or": [{"n_citation": {"$gte": 100}}, {"year": {"$gte": 2000}}]} },
+  {
+  "$group": {
+    "_id": "$doc_type",
+    "averageNumberPages": { "$avg": {"$subtract": ["$page_end","$page_start"]}} 
+  }},
+  {
+  "$sort": {"averageNumberPages": -1}}
+])

@@ -1,0 +1,45 @@
+{
+    "id": ...,
+    "title": "...",
+    "abstract": "...",
+    "authors":[{
+        "name": "...",
+        "org": "...",
+        "email": "...",
+        "bio": "..."
+        }],
+    "fos":[{
+        "name": "...",
+        "weight": ...
+        }],
+    "year": ...,
+    "page_start": ...,
+    "page_end": ...,
+    "doc_type": "...",
+    "publisher": "...",
+    "volume": ...,
+    "issue": ...,
+    "doi": "...",
+    "n_citation": ...,
+    "venue":{
+        "raw": "...",
+        "id": "...",
+        },
+    "references": [ ... ],
+    "sections":[
+            {
+            "id": ...,
+            "title": "...",
+            "text": "...",
+            "subsections": [{
+                    "id":...,
+                    "title": "...",
+                    "text": "..."
+                    }],
+            "figures": [{
+                    "url": "...",
+                    "caption": "..."
+                    }]
+            }
+            ]
+}

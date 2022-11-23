@@ -1,0 +1,11 @@
+db.papers.aggregate([
+   {
+     $lookup:
+       {
+         from: "papers",
+         localField: "references",
+         foreignField: "_id",
+         as: "refs"
+       }
+  }
+])

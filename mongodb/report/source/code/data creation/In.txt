@@ -1,0 +1,4 @@
+LOAD CSV WITH HEADERS FROM "file:///venue_dataset.csv" AS csvLine
+MATCH (p:Paper),(v:Venue)
+WHERE (toInteger(csvLine.paper_id)=p.id) and (toInteger(csvLine.venue_id) = v.id)
+CREATE (p)-[i:in_]->(v)

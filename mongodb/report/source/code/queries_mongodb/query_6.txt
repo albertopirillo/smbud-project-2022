@@ -1,0 +1,4 @@
+db.papers.find( 
+   {"$and":[ {"$or": [{"fos.name": "Computer engineering"}, {"fos.name": "Computer science"}]}, {"sections.subsections": {"$exists": true}} ] },
+   {"title":1, "sections.title":1 } 
+)

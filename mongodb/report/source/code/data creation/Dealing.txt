@@ -1,0 +1,4 @@
+LOAD CSV WITH HEADERS FROM "file:///fos_dataset_0.csv" AS csvLine
+MATCH (p:Paper),(f:Fos)
+WHERE (toInteger(csvLine.paper_id)=p.id) AND (csvLine.fos_name = f.name) AND (toFloat(csvLine.fos_weight) = f.weight) 
+CREATE (p)-[d:dealing]->(f)

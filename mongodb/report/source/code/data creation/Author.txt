@@ -1,0 +1,2 @@
+LOAD CSV WITH HEADERS FROM "file:///author_dataset.csv" AS csvLine
+CREATE (a:Author {id: toInteger(csvLine.author_id), name: csvLine.author_name, organization: csvLine.author_org})
