@@ -1,5 +1,5 @@
 """
-    Thi script prepares the "paper", "venue" and "author datasets to be imported into Spark.
+    Thi script prepares the "paper", "venue" and "author" datasets to be imported into Spark.
     It adds the ids of the authors and of the venue to the "paper" dataset.
 """
 
