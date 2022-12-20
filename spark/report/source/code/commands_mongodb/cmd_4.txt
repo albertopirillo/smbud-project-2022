@@ -1,0 +1,167 @@
+db.papers.insertMany(
+  [{
+    "title": "Shackled to [...] acceptance",
+    "authors": [
+      {
+        "name": "Elena Karahanna",
+        "id": "270263451",
+        "org": "University of Georgia, Athens",
+        "email": "elenakarahanna@liberomail.com",
+        "bio": "Education: PhD, MIS, University of Minnesota, 1993.[...]"
+      }
+    ],
+    "venue": {
+      "raw": "Management Information Systems Quarterly",
+      "id": "57293258"
+    },
+    "year": 2012,
+    "n_citation": 215,
+    "page_start": 21,
+    "page_end": 42,
+    "doc_type": "Journal",
+    "publisher": "Society for Information Management",
+    "volume": 36,
+    "issue": 1,
+    "fos": [
+      {
+        "name": "Management science",
+        "w": 0.3945593
+      }
+    ],
+    "doi": "10.2307/41410404",
+    "references": [
+      ObjectId("175816726800000000000000"),
+      ObjectId("191857022600000000000000"),
+      ObjectId("209868554100000000000000")
+    ],
+    "abstract": "Given that adoption of a new system often implies fully or partly replacing [...]",
+    "sections": [
+      {
+        "id": 1,
+        "title": "Introduction",
+        "text": "Warfarin, [...]",
+        "subsections": [
+          {
+            "id": 1,
+            "title": "Warfarin dose adjustment",
+            "text": "Warfarin dose adjustment [...]"
+          },
+          {
+            "id": 2,
+            "title": "Time in therapeutic range (TTR)",
+            "text": "Time in therapeutic range (TTR) has been widely used. [...]"
+          }
+        ],
+        "figures": [
+          {
+            "url": "http://lh6.ggpht.com/IMG_3422.JPG?imgmax=800",
+            "caption": "PRISMA chart used for the selection of articles"
+          },
+          . . .
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Method",
+        "subsections": [
+          {
+            "id": 1,
+            "title": "Search Strategy",
+            "text": "We conducted an extensive literature search in a very systematic way [...]"
+          }
+        ],
+        "figures": [
+          {
+            "url": "http://lh6.ggpht.com//IMG_3422.JPG?imgmax=800",
+            "caption": "Poor hypertension control or age-related frailty"
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Result",
+        "subsections": [
+          {
+            "id": 1,
+            "title": "Selection Criteria",
+            "text": "1) Age: There is clear evidence on the benefits of warfarin [...]"
+          },
+          {
+            "id": 2,
+            "title": "Data Extraction",
+            "text": "Two reviewers (TR and NKJ1) independently extracted data [...]"
+          }
+            . . .
+        ],
+        "figures": [
+          {
+            "url": "http://lh6.ggpht.com/IMG_3422.JPG?imgmax=800",
+            "caption": "Optimal anticoagulation"
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "title": "The State of the Art in Text Filtering",
+    "authors": [
+      {
+        "name": "Douglas W. Oard",
+        "id": "7916806",
+        "org": "University of Maryland, College Park, MD 20742, U.S.A.",
+        "email": "douglasw.oard@123mail.org",
+        "bio": "Institute for Advanced Computer Studies.Information technology, user modeling, information retrieval. [...]"
+      }
+    ],
+    "venue": {
+      "raw": "User Modeling and User-adapted Interaction",
+      "id": "160628929"
+    },
+    "year": 1997,
+    "n_citation": 114,
+    "page_start": 141,
+    "page_end": 178,
+    "doc_type": "Journal",
+    "publisher": "Kluwer Academic Publishers",
+    "volume": 7,
+    "issue": 3,
+    "fos": [
+      {
+        "name": "Machine learning",
+        "w": 0.442438453
+      },
+      {
+        "name": "Computer science",
+        "w": 0.4239926
+      },
+    ],
+    "doi": "10.1023/A:1008287121180",
+    "references": [ ... ],
+    "abstract": "This paper develops. [. . .] implications for future research on text filtering.",
+    "sections": [
+      {
+        "id": 1,
+        "title": "Introduction",
+        "text": "Warfarin, a coumarin derivative oral anticoagulant [...]",
+        "subsections": [
+          {
+            "id": 1,
+            "title": "Warfarin dose adjustment",
+            "text": "Warfarin dose adjustment is based on regular monitoring of international normalized ratio (INR). [...]"
+          },
+          {
+            "id": 2,
+            "title": "Time in therapeutic range (TTR)",
+            "text": "Time in therapeutic range (TTR) has been widely used to measure the quality of INR control [...]"
+          }
+        ],
+        "figures": [
+          {
+            "url": "http://lh6.ggpht.com/IMG_3422.JPG?imgmax=800",
+            "caption": "PRISMA chart used for the selection of articles"
+          }
+        ]
+      }
+    ]
+  }]
+)

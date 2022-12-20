@@ -1,0 +1,2 @@
+MATCH (p:Paper {title: "Markov localization for mobile robots in dynamic environments"})
+SET p.n_citation = 728

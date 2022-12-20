@@ -1,0 +1,5 @@
+paper_df.join(venue_df, venue_df.id == paper_df.venue_id) \
+.groupBy("year", "venue_id", "name") \
+.agg(count("name").alias("n_publications")) \
+.orderBy(desc("year")) \
+.show(20, truncate = False)

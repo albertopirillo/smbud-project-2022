@@ -1,0 +1,81 @@
+db.papers.insertOne({
+    "title": "The influence of query interface design on decision-making performance",
+    "authors": [
+      {
+        "name": "Cheri Speier",
+        "id": "1973614237",
+        "org": "Michigan State University, East Lansing, MI#TAB#",
+        "email": "cherispeier@polimi.it",
+        "bio": "Dr. Cheri Speier-Pero is the Ernst & Young Professor of Accounting and Information Systems, faculty director of the MS in Business Analytics program, and interim chairperson of the Department of Supply Chain Management in the Eli Broad College of Business. She joined the Broad College faculty in 1998, and has since served as associate dean for MBA/MS Programs, led executive development courses, and served on many different committees at the university, college- and department-levels."
+      },
+      {
+        "name": "Greta L. Polites",
+        "id": "2305721212",
+        "org": "School of Management, Bucknell University, Lewisburg, PA#TAB#",
+        "email": "gretal.polites@123mail.org",
+        "bio": "Dr. Polites joined the Kent State faculty in Fall 2012. She earned her B.S., M.S., and M.B.A. degrees from the University of South Florida, and completed her Ph.D. in Business Administration at the University of Georgia.[. . .] She has published two papers in the field of invertebrate paleontology, and has two fossil mollusk species (Attiliosa gretae and Opalia politesae) named after her."
+      }
+    ],
+    "venue": {
+      "raw": "Management Information Systems Quarterly",
+      "id": "57293258"
+    },
+    "year": 2003,
+    "n_citation": 139,
+    "page_start": 397,
+    "page_end": 423,
+    "doc_type": "Journal",
+    "publisher": "Society for Information Management and The Management Information Systems Research Center",
+    "volume": 27,
+    "issue": 3,
+    "fos": [
+      {
+        "name": "Decision-making",
+        "w": 0.4957332
+      },
+      {
+        "name": "Knowledge management",
+        "w": 0.46034035100000004
+      },
+      {
+        "name": "Workload",
+        "w": 0.5390811560000001
+      },
+      {
+        "name": "Interface design",
+        "w": 0
+      },
+      {
+        "name": "Information system",
+        "w": 0.5624888
+      }
+    ],
+    "doi": "10.2307/30036539",
+    "references": [
+      ObjectId("151626165300000000000000"),
+      ObjectId("197873803500000000000000")
+    ],
+    "abstract": "Managers in modern organizations are confronted with ever-increasing volumes of information that they must evaluate when making a decision. Data warehousing and data mining technologies have given managers a number of valuable tools that can help them store, retrieve, and analyze information contained in large databases; however, maximizing user performance with these tools remains a challenge for information systems professionals. [. . .] These results have important implications for the design of managerial decision-making systems, particularly in complex decision-making environments.",
+    "sections": [
+      {
+        "id": 1,
+        "title": "Introduction,
+        "text": "Automated decision-making (ADM) is no longer science fiction and systems are now making decisions that were traditionally made by humans (Robert, Pierce, Marquis, Kim, & Alahmad, 2020). Algorithms match passengers for a shared ride and plan drivers' routes (Möhlmann & Zalmanson, 2017). In Hong Kong, an algorithm organizes the underground's maintenance schedule and assigns repair jobs to service technicians (Hodson, 2014).",
+        "subsections": [],
+        "figures": [
+          {
+            "url": "http://lh6.ggpht.com/IMG_3422.JPG?imgmax=800",
+            "caption": "Chat interaction from participants’ point of view"
+          },
+          {
+            "url": "http://lh6.ggpht.com/IMG_3422.JPG?imgmax=800",
+            "caption": "Interview with the system after round one"
+          },
+          {
+            "url": "http://lh6.ggpht.com//IMG_3422.JPG?imgmax=800",
+            "caption": "Pictures of the anthropomorphism manipulation"
+          }
+        ]
+      }
+    ]
+  })

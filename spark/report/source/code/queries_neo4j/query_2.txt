@@ -1,0 +1,3 @@
+MATCH (p: Paper) -[w:writing]->(a:Author), (p: Paper) -[i: in_]->  (v:Venue)
+WHERE v.id >= 140000000 and v.id <= 140900000 AND p.doc_type='Journal'
+RETURN a

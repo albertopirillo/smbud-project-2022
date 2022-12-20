@@ -1,0 +1,7 @@
+db.papers.aggregate([
+  {"$match":{ "$and": [{"doc_type":"Journal"}, {"year": {"$gt": 2000}}, {"authors.org": {"$regex": /University/}}]}},
+  {"$unwind": {"path": "$authors"}},
+  {"$group": {"_id": "$authors.id", "n_papers": {"$sum":1}}},
+  {"$sort":{"n_papers":-1}},
+  {"$limit": 10}
+])

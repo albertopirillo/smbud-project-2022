@@ -1,0 +1,6 @@
+MATCH s = shortestPath(
+(p: Paper)-[r:referencing*]->(p2: Paper)
+)
+WHERE p2.n_citation>10*p.n_citation AND p <> p2
+RETURN s
+LIMIT 5

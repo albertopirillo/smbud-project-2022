@@ -1,0 +1,11 @@
+db.papers.aggregate([
+  {"$match": { "$and": [{"fos.w": {"$gte": 0.7}}, {"doc_type": "Conference"}] }},
+  {
+  "$group": {
+    "_id": "$_id",
+    "n_refs": {"$push": {"$size": "$references"}},
+    "n_sections": {"$push": {"$size": "$sections"}}
+  }},
+  {"$sort": {"n_refs": -1}},
+  {"$limit": 7}
+])

@@ -1,0 +1,10 @@
+paper_df.select(col("id"), col("title"), col("year"), col("n_citation"), col("page_start"), col("page_end"), col("doc_type"), col("publisher"), col("volume"), col("issue"), col("doi"), col("references"), col("abstract"), col("venue_id"), explode(col("authors_id")), col("fos_id")) \
+.withColumnRenamed("col", "authors_id") \
+.withColumnRenamed("id", "paper_id") \
+.join(author_df, author_df.id == col("authors_id"), "full") \
+.filter(col("org") == "Stanford University") \
+.groupBy("authors_id") \
+.agg(count("paper_id").alias("n_papers")) \
+.orderBy(asc("n_papers")) \
+.filter(col("n_papers") > 1) \
+.show(truncate = False)

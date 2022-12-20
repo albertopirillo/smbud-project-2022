@@ -1,0 +1,5 @@
+schema_fos = StructType([
+    StructField("id", StringType(), False),
+    StructField("name", StringType(), False),
+    StructField("weight", FloatType(), True)
+])

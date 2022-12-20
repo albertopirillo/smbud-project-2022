@@ -1,0 +1,2 @@
+LOAD CSV WITH HEADERS FROM "file:///paper_dataset2.csv" AS csvLine
+CREATE (p:Paper {id: toInteger(csvLine.id), title: csvLine.title, year: toInteger(csvLine.year), doi: csvLine.doi, volume: csvLine.volume, issue: csvLine.issue, abstract:csvLine.abstract, n_citation:toInteger(csvLine.n_citation), page_start:toInteger(csvLine.page_start), page_end:toInteger(csvLine.page_end), publisher:csvLine.publisher, doc_type:csvLine.doc_type})

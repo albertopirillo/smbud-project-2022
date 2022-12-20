@@ -1,0 +1,6 @@
+paper_df.select(col("id"), col("title"), col("year"), col("n_citation"), col("publisher"), col("references"), col("abstract"), col("venue_id"), col("authors_id"), explode(col("fos_id"))) \
+.withColumnRenamed("col", "fos_id") \
+.withColumnRenamed("id", "paper_id") \
+.join(fos_df, fos_df.id == col("fos_id"), "fullouter").filter(col("name") == "Computer science") \
+.select(col("paper_id"), col("title"), col("year"), col("n_citation"), col("publisher"), col("references"), col("venue_id"), col("authors_id"), col("fos_id")) \
+.show()

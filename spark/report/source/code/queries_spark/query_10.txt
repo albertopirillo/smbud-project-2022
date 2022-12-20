@@ -1,0 +1,9 @@
+paper_df.filter((col("page_end") - col("page_start") > 10)) \
+.select(col("id").alias("paper_id"), col("venue_id"), col("volume"), explode(paper_df.authors_id).alias("author_id")) \
+.join(author_df, author_df.id == col("author_id")).drop("id").withColumnRenamed("name", "author_name") \
+.join(venue_df, venue_df.id == paper_df.venue_id).drop("id").withColumnRenamed("name", "venue_name") \
+.groupBy(col("venue_id"), col("venue_name"), col("org")) \
+.agg(count("paper_id").alias("n_papers")) \
+.filter((col("n_papers") >= 4) & (col("org").isNotNull())) \
+.sort(desc("n_papers")) \
+.show()

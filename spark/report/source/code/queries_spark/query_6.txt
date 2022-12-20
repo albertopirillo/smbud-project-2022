@@ -1,0 +1,4 @@
+paper_df.groupBy("publisher") \
+.agg(count("id").alias("n_papers")) \
+.filter(col("n_papers")>=100) \
+.show(truncate = False)

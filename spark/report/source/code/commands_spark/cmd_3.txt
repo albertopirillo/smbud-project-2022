@@ -1,0 +1,4 @@
+newRow = spark.createDataFrame([(1882405, "Elon Musk", "Tesla")], ["id","name","org"])
+
+new_df = author_df.union(newRow)
+new_df.filter(new_df.name == "Elon Musk").show(truncate = False)

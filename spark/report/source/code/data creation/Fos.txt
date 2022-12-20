@@ -1,0 +1,2 @@
+LOAD CSV WITH HEADERS FROM "file:///fos_dataset_0.csv" AS csvLine 
+CREATE (f:Fos {weight: toFloat(csvLine.fos_weight), name: csvLine.fos_name})

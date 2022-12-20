@@ -1,0 +1,7 @@
+MATCH (a:Author) WHERE a.id=3000000000
+MATCH (f:Fos) WHERE f.name="Cloud computing" AND f.weight=0.6410412
+MATCH (v:Venue) WHERE v.id=3000000001
+MATCH (ref:Paper) WHERE ref.doi="10.1109/JPROC.2015.2483592"
+MATCH (cit:Paper) WHERE cit.doi="10.1007/s10845-008-0158-5"
+CREATE (p:Paper { id: 3000000000, title: "Application of deterministic, stochastic, and hybrid methods for cloud provider selection", year: 2022, doi: "10.1186/s13677-021-00275-1", volume: "11" , issue: "1" , abstract: "Cloud Computing popularization inspired ... requests.", n_citation: 5, page_start: 5, page_end: 10, publisher: "SpringerOpen", doc_type: "Journal" })
+CREATE (p)-[w:writing]->(a), (p)-[r:referencing]->(ref), (cit)-[r:referencing]->(p), (p)-[i:in_]->(v), (p)-[d:dealing]->(f)

@@ -1,0 +1,10 @@
+paper_df.select(col("id"), col("title"), col("year"), col("n_citation"), col("doi"), col("publisher"), explode(paper_df.fos_id)) \
+.withColumnRenamed("col", "fos") \
+.filter(col("fos") \
+  .isin(fos_df.filter(col("weight") > 0.6) \
+  .select(collect_list("id")) \
+  .collect()[0][0])) \
+.groupBy(col("publisher")) \
+.sum("n_citation") \
+.withColumnRenamed("sum(n_citation)", "total_citations") \
+.show(20, truncate = False)

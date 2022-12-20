@@ -1,0 +1,10 @@
+new_value = "New_Title"
+new_paper_df = paper_df.withColumn(
+    "title",
+    when(
+        col("id") == 101421652,
+        new_value
+    )
+)
+
+new_paper_df.filter(new_paper_df.id == 101421652).show()

@@ -1,0 +1,5 @@
+schema_author = StructType([
+    StructField("id", StringType(), False),
+    StructField("name", StringType(), False),
+    StructField("org", StringType(), True)
+])

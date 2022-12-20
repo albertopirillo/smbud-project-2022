@@ -1,0 +1,3 @@
+MATCH (p: Paper)-[i:in_]->(v: Venue), (p: Paper)-[d:dealing]->(f:Fos)
+WHERE (p.year > 2000) AND (v.name="IEEE Robotics & Automation Magazine")
+RETURN p

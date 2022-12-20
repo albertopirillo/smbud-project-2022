@@ -1,0 +1,3 @@
+db.papers.deleteOne(
+   { "_id": ObjectId("101421652000000000000000") } 
+)

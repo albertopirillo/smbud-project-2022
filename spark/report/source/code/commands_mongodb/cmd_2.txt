@@ -1,0 +1,3 @@
+db.papers.deleteMany(
+  {"$and" : [ {"n_citation" : {"$lt": 120} }, {"year": {"$lte": 2005} } ] } 
+)

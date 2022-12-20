@@ -1,0 +1,5 @@
+db.papers.aggregate([
+  {"$match": {"$and": [{"n_citation": {"$gte": 500}}, {"volume": {"$gt": 12}}]}},
+  {"$unwind": {"path": "$sections"}},
+  {"$group": {"_id": "$venue", "content of papers": {"$push": "$sections"}}}
+])

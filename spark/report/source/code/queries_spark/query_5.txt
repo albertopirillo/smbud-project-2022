@@ -1,0 +1,5 @@
+paper_df.filter((col("publisher") == "IEEE") & (col("n_citation") > 500)) \
+.groupBy("year", "doc_type") \
+.agg(count("year").alias("n_years")) \
+.orderBy(desc("year")) \
+.show(20, truncate = False)

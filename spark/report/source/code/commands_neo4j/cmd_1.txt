@@ -1,0 +1,1 @@
+CREATE (a:Author {id: 3000000000, name:"Mario Rossi", organization:"Politecnico di Milano"})

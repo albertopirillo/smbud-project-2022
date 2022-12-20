@@ -1,0 +1,4 @@
+schema_venue = StructType([
+    StructField("id", LongType(), False),
+    StructField("name", StringType(), False),
+])

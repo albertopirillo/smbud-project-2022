@@ -1,0 +1,4 @@
+paper_df.filter((col("n_citation") >= 400) & (col("publisher").like("IEEE%"))) \
+.limit(15) \
+.select(col("id"), col("title"), col("n_citation"), col("publisher"), col("abstract")) \
+.show()

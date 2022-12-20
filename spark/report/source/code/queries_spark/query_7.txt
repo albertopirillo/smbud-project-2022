@@ -1,0 +1,6 @@
+paper_df.filter(col("doc_type") == "Journal") \
+.groupBy("year") \
+.agg(count("id").alias("n_papers")) \
+.orderBy(asc("year")) \
+.filter(col("n_papers") > 150) \
+.show(truncate = False)

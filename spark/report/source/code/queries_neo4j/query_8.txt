@@ -1,0 +1,4 @@
+MATCH (p: Paper)-[r: referencing]->(p2: Paper), (p: Paper)-[r2: referencing]->(p3: Paper), (p2: Paper)-[d: dealing]->(f: Fos), (p3: Paper)-[d2: dealing]->(f2: Fos) 
+WHERE p.page_end-p.page_start>10 AND p2 <> p3 AND f.name='Artificial Intelligence' AND f.weight>0.0 and f2.name = 'Machine learning' AND f2.weight>0.0
+RETURN p.title AS Title, SUM(p.n_citation) AS Sum_n_citation 
+LIMIT 5

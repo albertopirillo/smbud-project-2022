@@ -1,0 +1,18 @@
+schema_paper = StructType([
+    StructField("id", StringType(), False),
+    StructField("title", StringType(), False),
+    StructField("year", IntegerType(), True),
+    StructField("n_citation", IntegerType(), True),
+    StructField("page_start", IntegerType(), True),
+    StructField("page_end", IntegerType(), True),
+    StructField("doc_type", StringType(), True),
+    StructField("publisher", StringType(), True),
+    StructField("volume", IntegerType(), True),
+    StructField("issue", IntegerType(), True),
+    StructField("doi", StringType(), True),
+    StructField("references", StringType(), True),
+    StructField("abstract", StringType(), True),
+    StructField("venue_id", LongType(), False), 
+    StructField("authors_id", StringType(), False),
+    StructField("fos_id", StringType(), False)
+])

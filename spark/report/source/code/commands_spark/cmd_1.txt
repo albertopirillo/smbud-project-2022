@@ -1,0 +1,2 @@
+paper_df.drop(paper_df.year) \
+  .show()

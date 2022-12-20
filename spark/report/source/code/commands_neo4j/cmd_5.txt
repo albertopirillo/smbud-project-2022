@@ -1,0 +1,2 @@
+MATCH (a:Author {name: 'Stefano Ceri'})
+SET a.organization = "Politecnico di Milano"

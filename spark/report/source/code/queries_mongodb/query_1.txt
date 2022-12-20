@@ -1,0 +1,4 @@
+db.papers.find(
+   {"year": 2006, "volume": {"$gte": 5}, "issue": 3},
+   {"authors.name":1, "authors.org":1, "venue":1} 
+).limit(2)

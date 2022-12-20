@@ -1,0 +1,5 @@
+paper_df.filter((col("id") \
+  .isin(paper_df.filter(col("doc_type") == "Conference") \
+  .select(collect_list("id")).collect()[0][0])) & (col("year") > 2003)) \
+.select(col("id"), col("title"), col("year"), col("doc_type"), col("abstract"), col("venue_id"), col("authors_id"), col("fos_id")) \
+.show(10)

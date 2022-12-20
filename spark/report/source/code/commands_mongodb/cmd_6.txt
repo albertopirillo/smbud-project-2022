@@ -1,0 +1,5 @@
+db.papers.updateMany(
+   { "doc_type":  "Conference", "year": {"$gte": 2000} } ,
+   { "$set": { "page_start": 0 } },
+   { "$set": { "page_end": {"$substract": ["$page_end","$page_start"] } } }
+)

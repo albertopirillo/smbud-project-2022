@@ -1,0 +1,4 @@
+MATCH (p: Paper)-[r:referencing]->(p2: Paper), (p2: Paper)-[r2:referencing]->(p: Paper), (p: Paper)-[w:writing]->(a: Author),(p: Paper)-[i:in_]->(v: Venue), (p2: Paper)-[i2:in_]->(v2: Venue)
+WHERE p2.n_citation>500 AND p.n_citation>500 AND v.name=v2.name AND a.organization="Royal Institute of Technology" 
+RETURN type(r) AS Relation, COUNT(*)/2 AS Num_of_bilateral_referencingsame_venue, a.organization AS organization 
+LIMIT 1

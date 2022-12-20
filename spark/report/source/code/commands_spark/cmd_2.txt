@@ -1,0 +1,2 @@
+paper_df.drop("page_start","page_end") \
+  .show()

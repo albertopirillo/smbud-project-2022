@@ -1,0 +1,5 @@
+LOAD CSV WITH HEADERS FROM "file:///paper_dataset2.csv" AS csvLine
+UNWIND split(csvLine.references,':') as ref
+MATCH (p1:Paper),(p2:Paper)
+WHERE (toInteger(csvLine.id)=p1.id) and (toInteger(ref)=p2.id)
+CREATE (p1)-[r:referencing]->(p2)
